@@ -11,12 +11,26 @@ class NearEarthObject {
     
     let name: String
     let designation: String
-    let isWorldKiller: String
+    let isWorldKiller: Bool
     
-    init(name: String, designation: String, isWorldKiller: String) {
+    // Memberwise Initializer - every class (in the model?) needs this.
+    init(name: String, designation: String, isWorldKiller: Bool) {
         self.name = name
         self.designation = designation
         self.isWorldKiller = isWorldKiller
+    }
+    // Failable initializer = optional
+    init?(dictionary: [String:Any]) {
+        /// as? = type cast; ["xxx"] = subscript syntax
+        guard let name = dictionary["name_limited"] as? String else {return nil}
+        guard let designation = dictionary["designation"] as? String else {return nil}
+        guard let isWK = dictionary["is_potentially_hazardous_asteroid"] as? Bool else {return nil}
+        
+        
+        self.name = name
+        self.designation = designation
+        self.isWorldKiller = isWK
+        
     }
     
 } // End of Class

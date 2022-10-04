@@ -10,8 +10,8 @@ import Foundation
 class NearEarthObjectController {
     
     // MARK: - SOT
-    /// default value of empty array
-    var neos: [NearEarthObject] = []
+    ///  not needed because we completed fetchNEOs with an array of NearEarthObjects
+    
     
     // MARK: - URL
     /// private for this file but public to other functions in this file. If we wanted other endpoints on this API, they'd use this same base URL but require a different fetch function.
@@ -28,11 +28,11 @@ class NearEarthObjectController {
     /// array of NEO not neos SOT because we are declaring the type
     /// Optional because we are using the internet and we don't want to return anything if connection is going wrong
     /// if you don't write a return type it defaults to Void
-    static func fetchNEOs(completionHandler: @escaping ([NearEarthObject]?) -> Void){
+    static func fetchNEOs(completion: @escaping ([NearEarthObject]?) -> Void){
         
         // Step 1: Create URL
         /// return satisfies unwrapping, but there are two functions and we need to address completion handler.
-        guard let baseURL = URL(string: baseURLString) else {completionHandler(nil); return}
+        guard let baseURL = URL(string: baseURLString) else {completion(nil); return}
         let neoURL = baseURL.appendingPathComponent(kNeoComponent)
         /// New Swift way of writing appending:
         let browseURL = neoURL.appending(path: kBrowseComponent)
@@ -44,7 +44,7 @@ class NearEarthObjectController {
         let queryItem = URLQueryItem(name: kAPIKeyKey, value: kAPIKeyValue)
         urlComponents?.queryItems = [queryItem]
         
-        guard let finalURL = urlComponents?.url else {completionHandler(nil); return}
+        guard let finalURL = urlComponents?.url else {completion(nil); return}
         
         print(finalURL)
         
@@ -53,24 +53,30 @@ class NearEarthObjectController {
             /// Handle the error first
             if let error = error {
                 print("There was an error with the data task", error.localizedDescription)
-                completionHandler(nil)
+                completion(nil)
             }
             
             // Check for data
-            guard let data = neoData else {completionHandler(nil); return}
+            guard let data = neoData else {completion(nil); return}
             
             // Now that we have data, I can convert it to a JSON object (do, try, catch)
             do {
-                /// Karl believes this topLevelDictionary should be passed to Model object to take care of its data rather than parsing it within the function.
-                let topLevelDictionary = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                /// Karl believes this topLevelDictionary should be passed to Model object to take care of its data rather than parsing it within the function here on the Model Controller
+                /// DO NOT NEED to Catch if we OPTIONALLY Try
+                guard let topLevelDictionary = try? JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [String:Any],
+                      let neosArray = topLevelDictionary["near_earth_objects"] as? [[String:Any]] else
+                {completion(nil); return}
+                /// Access data one at a time with for-in loop and create a temporary array to hold onto these individual neos
+                var tempNeoArray: [NearEarthObject] = []
                 
-            } catch {
-                
+                for neoDictionary in neosArray {
+                    guard let neo = NearEarthObject(dictionary: neoDictionary) else {completion(nil)
+                        return}
+                    tempNeoArray.append(neo)
+                }
+                completion(tempNeoArray)
             }
-            
         }
     }
-    
-    
     
 } // End of Class

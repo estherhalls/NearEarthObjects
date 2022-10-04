@@ -14,6 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Testing network call
+        NearEarthObjectController.fetchNEOs { neos in
+            guard let neos = neos else {return}
+            for neo in neos {
+                print(neo.name, neo.designation)
+            }
+        }
         return true
     }
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EBA4392428EC90AB00F10B7D /* NearEarthObjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA4392328EC90AB00F10B7D /* NearEarthObjectController.swift */; };
+		EBA4392628ECBF9D00F10B7D /* NEOListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA4392528ECBF9D00F10B7D /* NEOListTableViewController.swift */; };
 		EBC5A7DB28EC83D800A7B339 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC5A7DA28EC83D800A7B339 /* AppDelegate.swift */; };
 		EBC5A7DD28EC83D800A7B339 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC5A7DC28EC83D800A7B339 /* SceneDelegate.swift */; };
 		EBC5A7DF28EC83D800A7B339 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC5A7DE28EC83D800A7B339 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		EBA4392328EC90AB00F10B7D /* NearEarthObjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearEarthObjectController.swift; sourceTree = "<group>"; };
+		EBA4392528ECBF9D00F10B7D /* NEOListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEOListTableViewController.swift; sourceTree = "<group>"; };
 		EBC5A7D728EC83D800A7B339 /* NearEarthObjects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearEarthObjects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC5A7DA28EC83D800A7B339 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBC5A7DC28EC83D800A7B339 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		EBC5A7F228EC84A900A7B339 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EBA4392528ECBF9D00F10B7D /* NEOListTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBA4392628ECBF9D00F10B7D /* NEOListTableViewController.swift in Sources */,
 				EBC5A7DF28EC83D800A7B339 /* ViewController.swift in Sources */,
 				EBC5A7F828EC8E0500A7B339 /* NearEarthObject.swift in Sources */,
 				EBC5A7DB28EC83D800A7B339 /* AppDelegate.swift in Sources */,

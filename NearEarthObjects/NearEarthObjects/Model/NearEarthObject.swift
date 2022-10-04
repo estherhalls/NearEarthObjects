@@ -8,7 +8,7 @@
 import Foundation
 
 class NearEarthObject {
-    
+    // Parameters we chose to declare for our app from the Browse endpoint of the Near Earth Objects API
     let name: String
     let designation: String
     let isWorldKiller: Bool
@@ -20,12 +20,12 @@ class NearEarthObject {
         self.isWorldKiller = isWorldKiller
     }
     // Failable initializer = optional
+    /// Allows cleaner code in the model controller by parsing data from top level dictionary here and not in JSON object conversion.
     init?(dictionary: [String:Any]) {
         /// as? = type cast; ["xxx"] = subscript syntax
         guard let name = dictionary["name_limited"] as? String else {return nil}
         guard let designation = dictionary["designation"] as? String else {return nil}
         guard let isWK = dictionary["is_potentially_hazardous_asteroid"] as? Bool else {return nil}
-        
         
         self.name = name
         self.designation = designation

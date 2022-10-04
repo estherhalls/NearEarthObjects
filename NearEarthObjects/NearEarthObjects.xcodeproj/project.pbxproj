@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EBA4392428EC90AB00F10B7D /* NearEarthObjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA4392328EC90AB00F10B7D /* NearEarthObjectController.swift */; };
 		EBC5A7DB28EC83D800A7B339 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC5A7DA28EC83D800A7B339 /* AppDelegate.swift */; };
 		EBC5A7DD28EC83D800A7B339 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC5A7DC28EC83D800A7B339 /* SceneDelegate.swift */; };
 		EBC5A7DF28EC83D800A7B339 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC5A7DE28EC83D800A7B339 /* ViewController.swift */; };
 		EBC5A7E228EC83D800A7B339 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBC5A7E028EC83D800A7B339 /* Main.storyboard */; };
 		EBC5A7E428EC83DA00A7B339 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBC5A7E328EC83DA00A7B339 /* Assets.xcassets */; };
+		EBC5A7F828EC8E0500A7B339 /* NearEarthObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC5A7F728EC8E0500A7B339 /* NearEarthObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EBA4392328EC90AB00F10B7D /* NearEarthObjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearEarthObjectController.swift; sourceTree = "<group>"; };
 		EBC5A7D728EC83D800A7B339 /* NearEarthObjects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearEarthObjects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC5A7DA28EC83D800A7B339 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBC5A7DC28EC83D800A7B339 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		EBC5A7E128EC83D800A7B339 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBC5A7E328EC83DA00A7B339 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBC5A7E828EC83DA00A7B339 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBC5A7F728EC8E0500A7B339 /* NearEarthObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearEarthObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 		EBC5A7F128EC849C00A7B339 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EBA4392328EC90AB00F10B7D /* NearEarthObjectController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 		EBC5A7F428EC84BE00A7B339 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EBC5A7F728EC8E0500A7B339 /* NearEarthObject.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,7 +197,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBC5A7DF28EC83D800A7B339 /* ViewController.swift in Sources */,
+				EBC5A7F828EC8E0500A7B339 /* NearEarthObject.swift in Sources */,
 				EBC5A7DB28EC83D800A7B339 /* AppDelegate.swift in Sources */,
+				EBA4392428EC90AB00F10B7D /* NearEarthObjectController.swift in Sources */,
 				EBC5A7DD28EC83D800A7B339 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
